@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('STAGE1') {
+            steps {
+    
+               echo "This is the stage1" 
+
+            }
+
+        }
+        stage('SAGE2') {
+            steps {
+                
+            
+                echo "This is the stage2" 
+                
+            }
+
+        }    
+
+
+    }
+}
