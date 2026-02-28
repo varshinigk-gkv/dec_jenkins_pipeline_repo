@@ -1,4 +1,6 @@
 pipeline {
+    agent any
+
     stages {
         stage('STAGE1') {
             steps {
@@ -8,7 +10,7 @@ pipeline {
             }
 
         }
-        stage('SAGE2') {
+        stage('STAGE2') {
             steps {
                 sh '''
                     #!/bin/bash
