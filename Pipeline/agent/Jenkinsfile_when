@@ -11,7 +11,7 @@ pipeline {
     }
 
       stages {
-        stage('STAGE1 When Branch') {
+        stage('STAGE1 When Branch main') {
             when {
                 branch 'main'
             }
@@ -55,24 +55,3 @@ pipeline {
         }
       }
 }
-                           '
-                            
-
-                        
-
-                    
-                        
-                        
-                    
-                    
-                   
-
-                        
-
-
- 
-
-
-                
-
-                
