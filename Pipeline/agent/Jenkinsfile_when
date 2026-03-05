@@ -35,8 +35,7 @@ pipeline {
         }
         stage('when parameter') {
             when {
-                allOf{
-                    branch 'main'
+                
                     expression { params.DEPLOY == true}
 
                 }
