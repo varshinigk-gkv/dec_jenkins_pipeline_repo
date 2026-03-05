@@ -1,38 +1,57 @@
-pipeline {
-    agent any
+            pipeline {
+                agent any
 
-    environment{
-        DOCKER_USER = 'varshigkv'
-        AWS_ACCESS KEY = '5678943721235'
-    }
-
-    stages {
-        stage('STAGE1') {
-            environment{
-                STAGE = 'stage1'
-            }
-            steps {
-                sh 'sleep 5'
-             echo "This is the stage1" 
-
-            }
-
-        }
-        stage('STAGE2') {
-            steps {
-                sh '''
-                    #!/bin/bash
-                    pwd
-                    ls -lrt
-                    sleep 5
-
-                '''
-                echo "This is the stage2" 
                 
+
+                stages {
+                    stage('STAGE1') {
+                        
+                        steps {
+                            
+                        echo "This is the stage1" 
+                        sh 'sleep 5'
+
+                        }
+
+                    }
+                stage('PARALLEL TESTING') {
+                    parallel {
+                        stage('WINDOWS TESTING') {
+                            steps {
+                                echo "This is WINDOWS testing running" 
+                        sh 'sleep 5'
+
+                            }
+
+                        }
+
+                        stage('MAC TESTING') {
+                            steps {
+                                echo "This is MAC testing running" 
+                        sh 'sleep 5'
+
+                            }
+
+                        }
+    
+
+                    }
+                    
+                    }
+
+                    stage('FINAL') {
+                        
+                        steps {
+                            
+                        echo "This is the FINAL stage" 
+                        sh 'sleep 5'
+
+                        }
+
+                    }
+
+                }    
+
+
             }
-
-        }    
-
-
-    }
-}
+        
