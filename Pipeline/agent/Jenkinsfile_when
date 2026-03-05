@@ -30,10 +30,7 @@ pipeline {
             }
             steps {
                 echo "This is the FINAL stage" 
-                 sh '''
-                    sleep 5
-                    exit 1
-                '''
+                 sh 'sleep 5'
             }
         }
         stage('when parameter') {
@@ -47,10 +44,7 @@ pipeline {
             }
             steps {
                 echo "This is the FINAL stage" 
-                 sh '''
-                    sleep 5
-                    exit 1
-                '''
+                 sh 'sleep 5'
             }
         }
       }
