@@ -40,7 +40,7 @@ pipeline {
 
                 }
                 
-            }
+            
             steps {
                 echo "This is the FINAL stage" 
                  sh 'sleep 5'
